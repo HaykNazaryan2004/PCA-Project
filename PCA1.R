@@ -69,9 +69,9 @@ history <- model %>% fit(
   validation_split = 0.2,
   verbose = 2
 
-  cat("Ուսուցման տևողությունը PCA-ով:", training_time_pca, "\n")
 )
 
 # գնահատենք ճշտությունը տեստ(test)- դատայի վրա
 score <- model %>% evaluate(test_pca, test_labels_cat, verbose = 0)
 cat("Թեստի ճշտությունը PCA-ով:", round(score[[2]] * 100, 2), "%\n")
+cat("Ուսուցման տևողությունը PCA-ով:", training_time_pca, "\n")
