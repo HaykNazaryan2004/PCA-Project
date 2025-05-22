@@ -48,3 +48,4 @@ history_raw <- model_raw %>% fit(
 # գնահատենք ճշտությունը տեստ(test) դատայի վրա
 score_raw <- model_raw %>% evaluate(test_images, test_labels_cat, verbose = 0)
 cat("Թեստի ճշտությունը առանց PCA:", round(score_raw[[2]] * 100, 2), "%\n")
+cat("Ուսուցման տևողությունը առանց PCA:", training_time_raw, "\n")
