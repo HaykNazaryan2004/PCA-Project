@@ -68,6 +68,8 @@ history <- model %>% fit(
   batch_size = 128,
   validation_split = 0.2,
   verbose = 2
+
+  cat("Ուսուցման տևողությունը PCA-ով:", training_time_pca, "\n")
 )
 
 # գնահատենք ճշտությունը տեստ(test)- դատայի վրա
