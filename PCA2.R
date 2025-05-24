@@ -44,7 +44,7 @@ history_raw <- model_raw %>% fit(
   validation_split = 0.2,
   verbose = 2
 )
-
+training_time_raw <- Sys.time() - start_time_pca
 # գնահատենք ճշտությունը տեստ(test) դատայի վրա
 score_raw <- model_raw %>% evaluate(test_images, test_labels_cat, verbose = 0)
 cat("Թեստի ճշտությունը առանց PCA:", round(score_raw[[2]] * 100, 2), "%\n")
