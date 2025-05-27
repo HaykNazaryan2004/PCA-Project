@@ -62,7 +62,7 @@ model %>% compile(
 start_time_pca <- Sys.time()
 
 # ուսուցանել մոդելը
-history <- model_raw %>% fit(
+train_history <- model_raw %>% fit(
   x = train_pca, # Սրանք ուսուցման մուտքային feature-ներն են
   y = train_labels_cat, # Սրանք թիրախային label-ներն են՝ one-hot encoded տեսքով
   epochs = 20, # մոդելը անցնում է ամբողջ տվյալների միջով 20 անգամ
@@ -72,6 +72,6 @@ history <- model_raw %>% fit(
 )
 training_time_pca <- Sys.time() - start_time_pca
 # գնահատենք ճշտությունը տեստ(test)- դատայի վրա
-score <- model %>% evaluate(test_pca, test_labels_cat, verbose = 0)
+score <- model_raw %>% evaluate(test_pca, test_labels_cat, verbose = 0)
 cat("Թեստի ճշտությունը PCA-ով:", round(score[[2]] * 100, 2), "%\n")
 cat("Ուսուցման տևողությունը PCA-ով:", training_time_pca, "\n")
