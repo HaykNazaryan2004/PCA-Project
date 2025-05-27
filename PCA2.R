@@ -36,7 +36,7 @@ model_raw %>% compile(
 start_time_pca <- Sys.time()
 
 # ուսուցանել մոդելը
-history_raw <- model_raw %>% fit(
+train_history_raw <- model_raw %>% fit(
   x = train_images,
   y = train_labels_cat,
   epochs = 20,
