@@ -62,7 +62,7 @@ model %>% compile(
 start_time_pca <- Sys.time()
 
 # ուսուցանել մոդելը
-history <- model %>% fit(
+history <- model_raw %>% fit(
   x = train_pca, # Սրանք ուսուցման մուտքային feature-ներն են
   y = train_labels_cat, # Սրանք թիրախային label-ներն են՝ one-hot encoded տեսքով
   epochs = 20, # մոդելը անցնում է ամբողջ տվյալների միջով 20 անգամ
